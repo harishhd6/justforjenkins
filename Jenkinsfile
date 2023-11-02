@@ -11,7 +11,7 @@ pipeline {
                 script {
                     sh '''
                         echo "This is harikrishna.txt file content" > /home/ubuntu/harikrishna.txt
-                        echo "This is vimal.txt file content" > /home/ubuntu/vimal.txt
+                        echo "Thiss is vimal.txt file content" > /home/ubuntu/vimal.txt
                     '''
                 }
             }
