@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        echo "hari is good" > /home/ubuntu/harii/proo.txt
+                        echo "hari is good" > /var/tmp/proo.txt
                     '''
                 }
             }
