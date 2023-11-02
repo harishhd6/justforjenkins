@@ -12,7 +12,7 @@ pipeline {
                     sh 'echo "Hello, Harikrishna!" > /home/ubuntu/harikrishna.txt'
                     
                     // Create vimal.txt file in /home/ubuntu directory
-                    sh 'echo "Hello, Vimal!" > /home/ubuntu/vimal.txt'
+                    sh 'echo "Helloo, Vimal!" > /home/ubuntu/vimal.txt'
                     
                     // Verify files are created
                     sh 'ls -l /home/ubuntu'
