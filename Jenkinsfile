@@ -1,6 +1,7 @@
 pipeline {
     agent {
-        node('jailer') {
+        node {
+            name 'slave1'
             label 'jailer'
         }
     }
@@ -8,14 +9,10 @@ pipeline {
         stage('Create Files') {
             steps {
                 script {
-                    // Create harikrishna.txt file in /home/ubuntu directory
-                    sh 'echo "Hello, Harikrishna!" > /home/ubuntu/harikrishna.txt'
-                    
-                    // Create vimal.txt file in /home/ubuntu directory
-                    sh 'echo "Helloo, Vimal!" > /home/ubuntu/vimal.txt'
-                    
-                    // Verify files are created
-                    sh 'ls -l /home/ubuntu'
+                    sh '''
+                        echo "This is harikrishna.txt file content" > /home/ubuntu/harikrishna.txt
+                        echo "This is vimal.txt file content" > /home/ubuntu/vimal.txt
+                    '''
                 }
             }
         }
