@@ -1,22 +1,24 @@
 pipeline {
     agent {
-        label 'jailer'
-    }
-    stages {
-        stage('Create File') {
-            steps {
-                script {
-                    // Run the shell command to create the file
-                    sh 'touch harikrishna.txt'
-                    echo 'harikrishna.txt created successfully!'
-                }
-            }
+        node {
+            name 'slave1'
+            label 'jailer'
         }
     }
-    post {
-        always {
-            // Clean up workspace (optional)
-            deleteDir()
+    stages {
+        stage('Create Files') {
+            steps {
+                script {
+                    // Create harikrishna.txt file
+                    sh 'echo "Hello, Harikrishna!" > harikrishna.txt'
+                    
+                    // Create vimal.txt file
+                    sh 'echo "Hello, Vimal!" > vimal.txt'
+                    
+                    // Verify files are created
+                    sh 'ls -l'
+                }
+            }
         }
     }
 }
