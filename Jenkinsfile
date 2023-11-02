@@ -14,6 +14,7 @@ pipeline {
                     
                     // Create vimal.txt file
                     sh 'echo "Hello, Vimal!" > vimal.txt'
+                    sh 'echo "Hello, Vimal!" > vi.txt'
                     
                     // Verify files are created
                     sh 'ls -l'
